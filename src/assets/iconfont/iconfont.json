@@ -1,0 +1,79 @@
+{
+  "id": "2046340",
+  "name": "fortune",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "fortune-teller",
+  "glyphs": [
+    {
+      "icon_id": "1026713",
+      "name": "password",
+      "font_class": "password",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "9648378",
+      "name": "User",
+      "font_class": "User",
+      "unicode": "e716",
+      "unicode_decimal": 59158
+    },
+    {
+      "icon_id": "585820",
+      "name": "WorkflowMonitoring",
+      "font_class": "workflowmonitoring",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "459429",
+      "name": "qw－Customer",
+      "font_class": "qwcustomer",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "15427264",
+      "name": "顾客档案 customer/archives/customer",
+      "font_class": "customerarchivescustomer",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "977467",
+      "name": "lucky record",
+      "font_class": "luckyrecord",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "1461250",
+      "name": "project_info",
+      "font_class": "project_info",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "2305065",
+      "name": "sign",
+      "font_class": "icon-test",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "7318487",
+      "name": "签到",
+      "font_class": "qiandao",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "9731182",
+      "name": "运单",
+      "font_class": "yundan",
+      "unicode": "e7c0",
+      "unicode_decimal": 59328
+    }
+  ]
+}
