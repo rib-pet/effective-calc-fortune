@@ -42,6 +42,18 @@ const routes = [
         component: () => import("../views/catalog/variableWizard.vue")
       }
     ]
+  },
+  {
+    path: "/catalog",
+    name: "catalog",
+    component: BlankComp,
+    children: [
+      {
+        path: "sign",
+        name: "sign",
+        component: () => import("../views/catalog/sign.vue")
+      }
+    ]
   }
 ];
 

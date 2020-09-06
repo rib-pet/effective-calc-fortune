@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard">
-    <h4 class="page-title">Dashboard</h4>
+    <h4 class="page-title">仪表盘</h4>
   </div>
 </template>
 

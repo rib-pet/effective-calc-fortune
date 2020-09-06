@@ -23,10 +23,13 @@
       <el-submenu index="/catalog">
         <template slot="title">
           <i class="el-icon-s-grid"></i>
-          <span slot="title">Catalog</span>
+          <span slot="title">分类</span>
         </template>
         <el-menu-item index="/catalog/varible-wizard">
-          Varible Master
+          Variable Master
+        </el-menu-item>
+        <el-menu-item index="/catalog/sign">
+          <i class="iconfont iconqiandao sign-icon"></i>
         </el-menu-item>
       </el-submenu>
     </el-menu>
@@ -54,5 +57,9 @@ export default {
 }
 .slide-bar-menu {
   min-height: calc(~"100vh - 65px");
+}
+
+.sign-icon {
+  font-size: 20px;
 }
 </style>
