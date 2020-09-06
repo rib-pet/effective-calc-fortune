@@ -79,24 +79,18 @@
       }
     },
     beforeCreate () {
-
       $.ajax({
         type: "GET",
-        headers : {
-          "Access-Control-Allow-Origin": "*",
-          'Content-Type':'application/json'
-        },
-        crossDomain:true,
+        crossDomain: true,
         url: 'https://localhost:44369/api/signList',
-        dataType: 'jsonp',
-        jsonpCallback: (data)=>{
+        dataType: "json",
+        success: data => {
           console.log(data)
         },
-        jsonp: (data)=>{
-          console.log(data)
-        },
+        error: (err) => {
+          console.log('request json error' + err)
+        }
       })
-
     },
     methods: {
       handleEdit (index, row) {
