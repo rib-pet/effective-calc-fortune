@@ -8,24 +8,40 @@
           <i class="iconfont iconhunyinlianai"></i> 婚姻签
         </span>
         <el-table
-          :data="wedSigns.filter(data => !search || data.context.toLowerCase().includes(search.toLowerCase()))"
+          :data="
+            wedSigns.filter(
+              (data) =>
+                !search ||
+                data.context.toLowerCase().includes(search.toLowerCase())
+            )
+          "
           style="width: 100%"
         >
+          <el-table-column type="selection" width="55"> </el-table-column>
           <el-table-column label="序号" prop="id"></el-table-column>
           <el-table-column label="签" prop="title"></el-table-column>
           <el-table-column label="内容" prop="context"></el-table-column>
-          <el-table-column label="价值" prop="cost"></el-table-column>
+          <el-table-column label="价值" prop="value"></el-table-column>
           <el-table-column align="right">
             <template slot="header">
-              <el-input v-model="search" size="mini" placeholder="输入关键字搜索" />
+              <el-input
+                v-model="search"
+                size="mini"
+                placeholder="输入关键字搜索"
+              />
             </template>
             <template slot-scope="scope">
-              <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
+              <el-button
+                size="mini"
+                @click="handleEdit(scope.$index, scope.row)"
+                >Edit</el-button
+              >
               <el-button
                 size="mini"
                 type="danger"
                 @click="handleDelete(scope.$index, scope.row)"
-              >Delete</el-button>
+                >Delete</el-button
+              >
             </template>
           </el-table-column>
         </el-table>
@@ -35,24 +51,40 @@
           <i class="iconfont iconMoneydollarfinancebusiness"></i> 事业签
         </span>
         <el-table
-          :data="businessSigns.filter(data => !search || data.context.toLowerCase().includes(search.toLowerCase()))"
+          :data="
+            businessSigns.filter(
+              (data) =>
+                !search ||
+                data.context.toLowerCase().includes(search.toLowerCase())
+            )
+          "
           style="width: 100%"
         >
+          <el-table-column type="selection" width="55"> </el-table-column>
           <el-table-column label="序号" prop="id"></el-table-column>
           <el-table-column label="签" prop="title"></el-table-column>
           <el-table-column label="内容" prop="context"></el-table-column>
-          <el-table-column label="价值" prop="cost"></el-table-column>
+          <el-table-column label="价值" prop="value"></el-table-column>
           <el-table-column align="right">
             <template slot="header">
-              <el-input v-model="search" size="mini" placeholder="输入关键字搜索" />
+              <el-input
+                v-model="search"
+                size="mini"
+                placeholder="输入关键字搜索"
+              />
             </template>
             <template slot-scope="scope">
-              <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
+              <el-button
+                size="mini"
+                @click="handleEdit(scope.$index, scope.row)"
+                >Edit</el-button
+              >
               <el-button
                 size="mini"
                 type="danger"
                 @click="handleDelete(scope.$index, scope.row)"
-              >Delete</el-button>
+                >Delete</el-button
+              >
             </template>
           </el-table-column>
         </el-table>
@@ -72,7 +104,7 @@ export default {
       signList: [],
       wedSigns: [],
       businessSigns: [],
-      search: ""
+      search: "",
     };
   },
   beforeCreate() {
@@ -81,15 +113,24 @@ export default {
       crossDomain: true,
       url: "https://localhost:44369/api/signList",
       dataType: "json",
-      success: data => {
+      success: (data) => {
         console.log(data);
         this.signList = data;
-        this.wedSigns = data.filter(sign => sign.type === "婚姻签");
-        this.businessSigns = data.filter(sign => sign.type === "事业签");
+        let i=0;
+        
+        data.filter((sign) => sign.type === "婚姻签").forEach(sign => {
+          sign.id = ++i
+          this.wedSigns.push(sign)
+        });
+        i=0;
+        data.filter((sign) => sign.type === "事业签").forEach(sign => {
+          sign.id = ++i
+          this.businessSigns.push(sign)
+        });
       },
-      error: err => {
+      error: (err) => {
         console.log("request json error" + err);
-      }
+      },
     });
   },
   methods: {
@@ -101,8 +142,8 @@ export default {
     },
     successCallback(data) {
       console.log(data);
-    }
-  }
+    },
+  },
 };
 </script>
 
